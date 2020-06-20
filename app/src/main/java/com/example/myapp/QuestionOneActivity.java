@@ -63,11 +63,13 @@ public class QuestionOneActivity extends AppCompatActivity {
                 showSummary();
             }
         });
+
     }
 
 
     public void calculateSalary(){
         double salaryInit = Double.parseDouble(salaryBase);
+        pensionText = insuranceText = "";
         salaryFinal = salaryInit;
         if (typeEmployee.equals("PLANILLA")) {salaryFinal += aditionalAmount = 1000; }
         else salaryFinal = salaryFinal +( aditionalAmount = (salaryFinal * 0.05));
@@ -108,6 +110,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         rbChoice = findViewById(itemId);
         try {
             pensionSelect = rbChoice.getText().toString();
+            rbPension.clearCheck();
         }catch (Exception exp){
             pensionSelect="";
         }
@@ -117,6 +120,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         rbChoice = findViewById(itemId);
         try {
             seguroSelect = rbChoice.getText().toString();
+            rbInsurance.clearCheck();
         }catch (Exception exp){
             seguroSelect="";
         }
@@ -127,6 +131,8 @@ public class QuestionOneActivity extends AppCompatActivity {
         hours = txtHours.getText().toString();
         typeEmployee = spType.getSelectedItem().toString();
     }
+
+
 
     public boolean validateInputs(){
         try{
