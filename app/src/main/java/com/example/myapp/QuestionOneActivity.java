@@ -126,10 +126,10 @@ public class QuestionOneActivity extends AppCompatActivity {
         }
 
 
-        name = txtName.getText().toString();
-        salaryBase = txtSalary.getText().toString();
-        hours = txtHours.getText().toString();
-        typeEmployee = spType.getSelectedItem().toString();
+        name = txtName.getText().toString().trim();
+        salaryBase = txtSalary.getText().toString().trim();
+        hours = txtHours.getText().toString().trim();
+        typeEmployee = spType.getSelectedItem().toString().trim();
     }
 
 

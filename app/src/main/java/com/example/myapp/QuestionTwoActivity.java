@@ -107,12 +107,12 @@ public class QuestionTwoActivity extends AppCompatActivity {
 
     public boolean capturarDatos(){
         try {
-            name =  txtNameProduct.getText().toString();
+            name =  txtNameProduct.getText().toString().trim();
             if(name.isEmpty()) throw  new Exception();
-            price =  txtPrice.getText().toString();
-            quantity = txtQuantity.getText().toString();
+            price =  txtPrice.getText().toString().trim();
+            quantity = txtQuantity.getText().toString().trim();
             double priceVal = Double.parseDouble(price);
-            quantity = txtQuantity.getText().toString();
+            quantity = txtQuantity.getText().toString().trim();
             int quantityVal= Integer.parseInt(quantity);
             if(priceVal<0  || quantityVal<0 ) throw  new Exception();
             product = new Product(name,Integer.parseInt(quantity),Double.parseDouble(price));
@@ -126,11 +126,11 @@ public class QuestionTwoActivity extends AppCompatActivity {
     public boolean  capturarDatosById(){
         try {
             id = txtId.getText().toString();
-            name =  txtNameProduct.getText().toString();
+            name =  txtNameProduct.getText().toString().trim();
             if(id.isEmpty() || name.isEmpty()) throw  new Exception();
-            price =  txtPrice.getText().toString();
+            price =  txtPrice.getText().toString().trim();
             double priceVal = Double.parseDouble(price);
-            quantity = txtQuantity.getText().toString();
+            quantity = txtQuantity.getText().toString().trim();
             int quantityVal= Integer.parseInt(quantity);
             if(priceVal<0  || quantityVal<0 ) throw  new Exception();
             product = new Product(id,name,Integer.parseInt(quantity),Double.parseDouble(price));

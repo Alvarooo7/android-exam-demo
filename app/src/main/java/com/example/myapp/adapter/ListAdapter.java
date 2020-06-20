@@ -50,8 +50,8 @@ public class ListAdapter extends BaseAdapter {
         Product product = lista.get(i);
         try{
             textViewName.setText(product.getName());
-            textViewQuantity.setText(String.valueOf(product.getQuantity()));
-            textViewAmount.setText(product.getPrice().toString());
+            textViewQuantity.setText("Cantidad: "+product.getQuantity());
+            textViewAmount.setText("Precio: "+product.getPrice().toString());
         }catch (Exception exp){
             System.out.println("ERROR:"+exp.getMessage());
         }
