@@ -5,15 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.entity.Producto;
-import com.example.modelo.DAOProducto;
+import com.example.entity.Product;
+import com.example.model.DAOProduct;
 import com.example.myapp.adapter.ListAdapter;
 
 import java.util.ArrayList;
@@ -22,15 +20,14 @@ public class QuestionTwoActivity extends AppCompatActivity {
 
 
     ListView listView;
-    EditText txtNombre,txtCantidad,txtPrecio,txtId;
+    EditText txtNameProduct,txtQuantity,txtPrice,txtId;
     Button btnAdd,btnUpdate,btnDelete;
 
-    ArrayList<Producto> listaPer = new ArrayList<>();
-    ArrayList<String> listViews = new ArrayList<>();
-    DAOProducto daoProducto = new DAOProducto(this);
+    ArrayList<Product> listaPer = new ArrayList<>();
+    DAOProduct daoProduct = new DAOProduct(this);
 
-    String id,nombre,precio,cantidad ;
-    Producto producto;
+    String id,name,price,quantity ;
+    Product product;
 
     ListAdapter adapter;
 
@@ -38,7 +35,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_two);
-        daoProducto.openBD();
+        daoProduct.openBD();
         asignarReferencias();
         listar();
     }
@@ -46,9 +43,9 @@ public class QuestionTwoActivity extends AppCompatActivity {
     private void asignarReferencias() {
         txtId = findViewById(R.id.txtId);
 
-        txtNombre = findViewById(R.id.txtNombre);
-        txtCantidad = findViewById(R.id.txtCantidad);
-        txtPrecio = findViewById(R.id.txtPrecio);
+        txtNameProduct = findViewById(R.id.txtNameProduct);
+        txtQuantity = findViewById(R.id.txtQuantity);
+        txtPrice = findViewById(R.id.txtPrice);
         btnAdd = findViewById(R.id.btnAdd);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
@@ -64,7 +61,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!capturarDatos()) return;
-                daoProducto.registrarPersona(producto);
+                daoProduct.registrarPersona(product);
                 listar();
             }
         });
@@ -74,7 +71,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!capturarDatosById()) return;
-                daoProducto.modificarPersona(producto);
+                daoProduct.modificarPersona(product);
                 listar();
             }
         });
@@ -83,7 +80,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!capturarDatosById()) return;
-                daoProducto.eliminarPersona(producto);
+                daoProduct.eliminarPersona(product);
                 listar();
             }
         });
@@ -91,18 +88,18 @@ public class QuestionTwoActivity extends AppCompatActivity {
     }
 
     public void listar(){
-        listaPer = daoProducto.listar();
+        listaPer = daoProduct.listar();
 
         adapter = new ListAdapter(this,listaPer);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Producto prod = listaPer.get(i);
+                    Product prod = listaPer.get(i);
                     txtId.setText(String.valueOf(prod.getId()));
-                    txtNombre.setText(prod.getNombre());
-                    txtPrecio.setText(prod.getPrecio().toString());
-                    txtCantidad.setText(String.valueOf(prod.getCantidad()));
+                    txtNameProduct.setText(prod.getName());
+                    txtQuantity.setText(String.valueOf(prod.getQuantity()));
+                    txtPrice.setText(prod.getPrice().toString());
                 }
             }
         );
@@ -110,15 +107,15 @@ public class QuestionTwoActivity extends AppCompatActivity {
 
     public boolean capturarDatos(){
         try {
-            nombre =  txtNombre.getText().toString();
-            if(nombre.isEmpty()) throw  new Exception();
-            precio =  txtPrecio.getText().toString();
-            cantidad = txtCantidad.getText().toString();
-            double precioVal = Double.parseDouble(precio);
-            cantidad = txtCantidad.getText().toString();
-            int cantidadVal= Integer.parseInt(cantidad);
-            if(precioVal<0  || cantidadVal<0 ) throw  new Exception();
-            producto = new Producto(nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
+            name =  txtNameProduct.getText().toString();
+            if(name.isEmpty()) throw  new Exception();
+            price =  txtPrice.getText().toString();
+            quantity = txtQuantity.getText().toString();
+            double priceVal = Double.parseDouble(price);
+            quantity = txtQuantity.getText().toString();
+            int quantityVal= Integer.parseInt(quantity);
+            if(priceVal<0  || quantityVal<0 ) throw  new Exception();
+            product = new Product(name,Integer.parseInt(quantity),Double.parseDouble(price));
             return true;
         }catch (Exception exp){
             Toast.makeText(this,"Ingrese Correctamente todos los campos",Toast.LENGTH_LONG).show();
@@ -129,14 +126,14 @@ public class QuestionTwoActivity extends AppCompatActivity {
     public boolean  capturarDatosById(){
         try {
             id = txtId.getText().toString();
-            nombre =  txtNombre.getText().toString();
-            if(id.isEmpty() || nombre.isEmpty()) throw  new Exception();
-            precio =  txtPrecio.getText().toString();
-            double precioVal = Double.parseDouble(precio);
-            cantidad = txtCantidad.getText().toString();
-            int cantidadVal= Integer.parseInt(cantidad);
-            if(precioVal<0  || cantidadVal<0 ) throw  new Exception();
-            producto = new Producto(id,nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
+            name =  txtNameProduct.getText().toString();
+            if(id.isEmpty() || name.isEmpty()) throw  new Exception();
+            price =  txtPrice.getText().toString();
+            double priceVal = Double.parseDouble(price);
+            quantity = txtQuantity.getText().toString();
+            int quantityVal= Integer.parseInt(quantity);
+            if(priceVal<0  || quantityVal<0 ) throw  new Exception();
+            product = new Product(id,name,Integer.parseInt(quantity),Double.parseDouble(price));
             return true;
         }catch (Exception exp){
             Toast.makeText(this,"Ingrese Correctamente todos los campos",Toast.LENGTH_LONG).show();

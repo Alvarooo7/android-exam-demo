@@ -1,6 +1,6 @@
 package com.example.util;
 
-public class Constantes {
+public class Constants {
 
     public static final String BBNAME = "BDProducto.db";
     public static final String TABLA =  "TProducto";

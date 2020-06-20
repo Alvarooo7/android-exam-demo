@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.entity.Producto;
+import com.example.entity.Product;
 import com.example.myapp.R;
 
 import java.util.ArrayList;
@@ -17,10 +16,10 @@ import java.util.ArrayList;
 public class ListAdapter extends BaseAdapter {
 
     Activity context;
-    ArrayList<Producto> lista ;
+    ArrayList<Product> lista ;
     private static LayoutInflater inflater = null;
 
-    public ListAdapter(Activity context, ArrayList<Producto> lista) {
+    public ListAdapter(Activity context, ArrayList<Product> lista) {
         this.context = context;
         this.lista = lista;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,11 +47,11 @@ public class ListAdapter extends BaseAdapter {
         TextView textViewName =  itemView.findViewById(R.id.txtNameProduct);
         TextView textViewQuantity =  itemView.findViewById(R.id.txtQuantity);
         TextView textViewAmount =  itemView.findViewById(R.id.txtAmount);
-        Producto product = lista.get(i);
+        Product product = lista.get(i);
         try{
-            textViewName.setText(product.getNombre());
-            textViewQuantity.setText(String.valueOf(product.getCantidad()));
-            textViewAmount.setText(product.getPrecio().toString());
+            textViewName.setText(product.getName());
+            textViewQuantity.setText(String.valueOf(product.getQuantity()));
+            textViewAmount.setText(product.getPrice().toString());
         }catch (Exception exp){
             System.out.println("ERROR:"+exp.getMessage());
         }

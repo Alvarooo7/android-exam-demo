@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,11 +16,11 @@ import android.widget.Toast;
 
 public class QuestionOneActivity extends AppCompatActivity {
 
-    EditText txtSueldo,txtNombre,txtHoras;
+    EditText txtSalary,txtName,txtHours;
     TextView txtResult;
     Button btnCalcular;
     Spinner spType;
-    RadioGroup rbPension,rbSeguro;
+    RadioGroup rbPension,rbInsurance;
     RadioButton rbChoice;
 
     double salaryFinal,aditionalAmount,pensionAmount,insuranceAmount,igvAmount;
@@ -42,16 +41,12 @@ public class QuestionOneActivity extends AppCompatActivity {
                 R.array.opciones,
                 R.layout.support_simple_spinner_dropdown_item);
         spType.setAdapter(typesAdapter);
-     /*   spType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            }
-        });*/
+
         rbPension = findViewById(R.id.rbPension);
-        rbSeguro = findViewById(R.id.rbSeguro);
-        txtNombre = findViewById(R.id.txtNombre);
-        txtSueldo = findViewById(R.id.txtSueldo);
-        txtHoras = findViewById(R.id.txtHoras);
+        rbInsurance = findViewById(R.id.rbInsurance);
+        txtName = findViewById(R.id.txtName);
+        txtSalary = findViewById(R.id.txtSalary);
+        txtHours = findViewById(R.id.txtHours);
         btnCalcular = findViewById(R.id.btnCalculate);
 
         txtResult = findViewById(R.id.txtResult);
@@ -118,7 +113,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         }
 
 
-        itemId = rbSeguro.getCheckedRadioButtonId();
+        itemId = rbInsurance.getCheckedRadioButtonId();
         rbChoice = findViewById(itemId);
         try {
             seguroSelect = rbChoice.getText().toString();
@@ -127,9 +122,9 @@ public class QuestionOneActivity extends AppCompatActivity {
         }
 
 
-        name = txtNombre.getText().toString();
-        salaryBase = txtSueldo.getText().toString();
-        hours = txtHoras.getText().toString();
+        name = txtName.getText().toString();
+        salaryBase = txtSalary.getText().toString();
+        hours = txtHours.getText().toString();
         typeEmployee = spType.getSelectedItem().toString();
     }
 

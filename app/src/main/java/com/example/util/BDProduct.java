@@ -4,16 +4,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class BDPersona extends SQLiteOpenHelper {
+public class BDProduct extends SQLiteOpenHelper {
 
-    public BDPersona(Context context){
-        super(context,Constantes.BBNAME,null,Constantes.VERSION);
+    public BDProduct(Context context){
+        super(context, Constants.BBNAME,null, Constants.VERSION);
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE "+ Constantes.TABLA + " "+
+        sqLiteDatabase.execSQL("CREATE TABLE "+ Constants.TABLA + " "+
                 " (id integer Primary Key autoincrement," +
                 "nombre text not null," +
                 "cantidad int not null, " +

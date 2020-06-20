@@ -45,7 +45,7 @@
         <include layout="@layout/base_toolbar" android:id="@+id/tlbBase" />
 
         <TextView
-            android:id="@+id/txtTitulo"
+            android:id="@+id/txtTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pregunta 2"
@@ -65,37 +65,37 @@
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTittle" />
 
         <EditText
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtNameProduct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:hint="Nombre del Producto"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTittle" />
 
         <EditText
-            android:id="@+id/txtCantidad"
+            android:id="@+id/txtQuantity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:hint="Cantidad"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
 
         <EditText
-            android:id="@+id/txtPrecio"
+            android:id="@+id/txtPrice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:hint="Precio"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtCantidad" />
+            app:layout_constraintTop_toBottomOf="@+id/txtQuantity" />
 
 
 
@@ -107,7 +107,7 @@
             android:fontFamily="@font/averta_bold"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrice"
             />
 
         <Button

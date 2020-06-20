@@ -70,7 +70,7 @@
 
 
         <EditText
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -81,18 +81,18 @@
 
 
         <EditText
-            android:id="@+id/txtSueldo"
+            android:id="@+id/txtSalary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentMiddle"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+            app:layout_constraintTop_toBottomOf="@+id/txtName"
             android:hint="Sueldo Básico" />
 
         <EditText
-            android:id="@+id/txtHoras"
+            android:id="@+id/txtHours"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:hint="Horas Extra "
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+            app:layout_constraintTop_toBottomOf="@+id/txtName"
              />
 
         <RadioGroup
@@ -110,7 +110,7 @@
             android:layout_marginTop="15dp"
 
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtSueldo">
+            app:layout_constraintTop_toBottomOf="@+id/txtSalary">
 
                 <RadioButton
                     android:id="@+id/rbtAFP"
@@ -127,12 +127,12 @@
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/rbSeguro"
+            android:id="@+id/rbInsurance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"
-            app:layout_constraintTop_toBottomOf="@+id/txtHoras">
+            app:layout_constraintTop_toBottomOf="@+id/txtHours">
 
                 <RadioButton
                     android:id="@+id/rbtEPS"
@@ -162,7 +162,7 @@
             android:fontFamily="@font/averta_bold"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/rbSeguro"
+            app:layout_constraintTop_toBottomOf="@+id/rbInsurance"
             />
 
         <TextView
