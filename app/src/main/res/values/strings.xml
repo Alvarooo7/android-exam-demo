@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Acceso DB</string>
+    <string-array name="opciones">
+        <item>PLANILLA</item>
+        <item>CONTRATADO</item>
+    </string-array>
+</resources>

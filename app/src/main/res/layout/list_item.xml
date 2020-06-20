@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentStartField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentEndField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <TextView
+            android:id="@+id/txtNameProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            app:layout_constraintEnd_toStartOf="@+id/guidelinePercentStartField"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelinePercentEndField"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelinePercentStartField"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:hint="Cantidad" />
+
+                <TextView
+                    android:id="@+id/txtAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guidelinePercentEndField"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelinePercentEnd"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:hint="Precio" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

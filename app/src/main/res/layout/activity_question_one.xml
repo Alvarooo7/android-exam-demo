@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionOneActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentSpinnerEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentMiddleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.535" />
+
+        <include layout="@layout/base_toolbar" android:id="@+id/tlbBase" />
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pregunta 1"
+            android:layout_marginTop="5dp"
+            style="@style/Secondary.Dark"
+            app:layout_constraintTop_toBottomOf="@+id/tlbBase"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelinePercentStart" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentSpinnerEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelinePercentStart"
+            />
+
+
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Nombre del Trabajador"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
+        <EditText
+            android:id="@+id/txtSueldo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentMiddle"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+            android:hint="Sueldo Básico" />
+
+        <EditText
+            android:id="@+id/txtHoras"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:hint="Horas Extra "
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+             />
+
+        <RadioGroup
+            android:id="@+id/rbPension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtSueldo">
+
+                <RadioButton
+                    android:id="@+id/rbtAFP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AFP" />
+
+                <RadioButton
+                    android:id="@+id/rbtONP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ONP" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rbSeguro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"
+            app:layout_constraintTop_toBottomOf="@+id/txtHoras">
+
+                <RadioButton
+                    android:id="@+id/rbtEPS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EPS" />
+
+                <RadioButton
+                    android:id="@+id/rbtOnco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seguro Oncológico" />
+
+                <RadioButton
+                    android:id="@+id/rbtClub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Afiliación Club" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Calcular Sueldo"
+            android:fontFamily="@font/averta_bold"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/rbSeguro"
+            />
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="=======Resumen========"
+            android:layout_marginTop="14dp"
+            style="@style/Secondary.Dark.Little"
+            app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelinePercentStart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

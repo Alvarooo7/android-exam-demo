@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionTwoActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentSpinnerEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePercentMiddleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.535" />
+
+        <include layout="@layout/base_toolbar" android:id="@+id/tlbBase" />
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pregunta 2"
+            android:layout_marginTop="5dp"
+            style="@style/Secondary.Dark"
+            app:layout_constraintTop_toBottomOf="@+id/tlbBase"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelinePercentStart" />
+
+
+
+        <EditText
+            android:id="@+id/txtId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Nombre del Producto"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <EditText
+            android:id="@+id/txtCantidad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Cantidad"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+        <EditText
+            android:id="@+id/txtPrecio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="Precio"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtCantidad" />
+
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTRAR PRODUCTO"
+            android:fontFamily="@font/averta_bold"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
+            />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="MODIFICAR PRODUCTO"
+            android:fontFamily="@font/averta_bold"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentMiddle"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+            />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ELIMINAR\nPRODUCTO"
+            android:fontFamily="@font/averta_bold"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+            />
+
+        <ListView
+            android:id="@+id/lvProducts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+            app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelinePercentStart"
+
+            />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
