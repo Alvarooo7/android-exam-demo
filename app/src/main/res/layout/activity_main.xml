@@ -29,6 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePercentMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -52,6 +59,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Pregunta 2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePercentEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
+        app:layout_constraintTop_toBottomOf="@+id/guidelinePercentMiddle" />
+    
+    <Button
+        android:id="@+id/btnQuestionThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pregunta 3"
         app:layout_constraintEnd_toStartOf="@+id/guidelinePercentEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
         app:layout_constraintHorizontal_bias="0.054"

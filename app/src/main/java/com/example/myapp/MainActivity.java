@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnQuestionOne,btnQuestionTwo;
+    Button btnQuestionOne,btnQuestionTwo,btnQuestionThree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     public void initView(){
         btnQuestionOne = findViewById(R.id.btnQuestionOne);
         btnQuestionTwo = findViewById(R.id.btnQuestionTwo);
+        btnQuestionThree = findViewById(R.id.btnQuestionThree);
     }
 
     public void addListener(){
         final Intent goToQuestionOne = new Intent(this,QuestionOneActivity.class);
         final Intent goToQuestionTwo = new Intent(this,QuestionTwoActivity.class);
+        final Intent goToQuestionThree = new Intent(this,LocationActivity.class);
         btnQuestionOne.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -39,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(goToQuestionTwo);
+            }
+        });
+
+        btnQuestionThree.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(goToQuestionThree);
             }
         });
     }
