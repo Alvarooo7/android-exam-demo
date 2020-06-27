@@ -19,6 +19,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".QuestionTwoActivity" />
         <activity android:name=".QuestionOneActivity" />
+        <activity android:name=".LocationActivity" />
         <!-- YOU  MUST TO CREATE YOUR API KEY IN https://console.cloud.google.com/ -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
