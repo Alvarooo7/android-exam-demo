@@ -17,10 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".QuestionTwoActivity"></activity>
-        <activity android:name=".QuestionOneActivity"></activity>
+        <activity android:name=".QuestionTwoActivity" />
+        <activity android:name=".QuestionOneActivity" />
+        <!-- YOU  MUST TO CREATE YOUR API KEY IN https://console.cloud.google.com/ -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="API_KEY"/>
     </application>
 
 </manifest>
