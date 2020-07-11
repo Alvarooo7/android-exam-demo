@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.entity.Product;
+import com.example.entity.User;
 import com.example.myapp.R;
 
 import java.util.ArrayList;
@@ -16,10 +17,10 @@ import java.util.ArrayList;
 public class ListAdapter extends BaseAdapter {
 
     Activity context;
-    ArrayList<Product> lista ;
+    ArrayList<User> lista ;
     private static LayoutInflater inflater = null;
 
-    public ListAdapter(Activity context, ArrayList<Product> lista) {
+    public ListAdapter(Activity context, ArrayList<User> lista) {
         this.context = context;
         this.lista = lista;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -46,12 +47,12 @@ public class ListAdapter extends BaseAdapter {
         itemView = (itemView == null ) ? inflater.inflate(R.layout.list_item,null): itemView;
         TextView textViewName =  itemView.findViewById(R.id.txtNameProduct);
         TextView textViewQuantity =  itemView.findViewById(R.id.txtQuantity);
-        TextView textViewAmount =  itemView.findViewById(R.id.txtAmount);
-        Product product = lista.get(i);
+        TextView txtAmount =  itemView.findViewById(R.id.txtAmount);
+        User user = lista.get(i);
         try{
-            textViewName.setText(product.getName());
-            textViewQuantity.setText("Cantidad: "+product.getQuantity());
-            textViewAmount.setText("Precio: "+product.getPrice().toString());
+            textViewName.setText("N° "+ (++i));
+            textViewQuantity.setText("Nick: "+user.getusername());
+            txtAmount.setText("Name: "+user.getName());
         }catch (Exception exp){
             System.out.println("ERROR:"+exp.getMessage());
         }

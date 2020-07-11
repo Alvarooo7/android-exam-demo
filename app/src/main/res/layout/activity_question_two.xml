@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".QuestionTwoActivity">
 
+        <RelativeLayout
+            android:id="@+id/rlBase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:translationZ="1000dp"
+                    android:background="@color/colorPrimary" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelinePercentStart"
             android:layout_width="wrap_content"
@@ -48,7 +67,7 @@
             android:id="@+id/txtTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pregunta 2"
+            android:text="ADMIN. USUARIO"
             android:layout_marginTop="5dp"
             style="@style/Secondary.Dark"
             app:layout_constraintTop_toBottomOf="@+id/tlbBase"
@@ -68,53 +87,52 @@
             app:layout_constraintTop_toBottomOf="@+id/txtTittle" />
 
         <EditText
-            android:id="@+id/txtNameProduct"
+            android:id="@+id/txtUsername"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:hint="Nombre del Producto"
+            android:hint="Nickname"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
             app:layout_constraintTop_toBottomOf="@+id/txtTittle" />
 
         <EditText
-            android:id="@+id/txtQuantity"
+            android:id="@+id/txtName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:hint="Cantidad"
+            android:hint="Nombre"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtNameProduct" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
 
         <EditText
-            android:id="@+id/txtPrice"
+            android:id="@+id/txtPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:hint="Precio"
+            android:hint="Ingrese la contraseña"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtQuantity" />
-
-
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="REGISTRAR PRODUCTO"
+            android:text="REGISTRAR USUARIO"
             android:fontFamily="@font/averta_bold"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrice"
+            app:layout_constraintTop_toBottomOf="@+id/txtPassword"
             />
 
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="MODIFICAR PRODUCTO"
+            android:text="MODIFICAR\nUSUARIO"
             android:fontFamily="@font/averta_bold"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentMiddle"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentStart"
@@ -125,7 +143,7 @@
             android:id="@+id/btnDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="ELIMINAR\nPRODUCTO"
+            android:text="ELIMINAR\nUSUARIO"
             android:fontFamily="@font/averta_bold"
             app:layout_constraintEnd_toStartOf="@id/guidelinePercentEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelinePercentMiddle"

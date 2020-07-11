@@ -41,11 +41,11 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     public void onMapReady(GoogleMap googleMap) {
         float zoom = 16f;
 
-        LatLng centerMap = new LatLng(41.403389, 2.174028);
+        LatLng centerMap = new LatLng( -12.0582824, -77.05855);
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centerMap, zoom));
 
-        LatLng centerMark = new LatLng(41.403389, 2.174028);
+        LatLng centerMark = new LatLng( -12.0582824, -77.05855);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(centerMark);
         markerOptions.title("Access DB Location");

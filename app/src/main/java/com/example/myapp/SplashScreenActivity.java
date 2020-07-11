@@ -19,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation);
         ivLogo = findViewById(R.id.ivLogo);
         ivLogo.startAnimation(animation);
-        final Intent goToMain = new Intent(this,MainActivity.class);
+        final Intent goToLogin = new Intent(this,LoginActivity.class);
 
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -29,7 +29,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                    startActivity(goToMain);
+                    startActivity(goToLogin);
                     finish();
             }
 
